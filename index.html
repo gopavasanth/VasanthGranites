@@ -15,12 +15,19 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+        <script src="./main.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="" alt="VASANTH GRANITES" /></a>
+                <a class="navbar-brand" href="#page-top"><img alt="VASANTH GRANITES" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -187,8 +194,8 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Meet Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">Feel free to connect with us in WhatsApp</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -196,7 +203,7 @@
                             <img class="mx-auto rounded-circle" src="assets/img/team/gopaprakash.jpg" alt="..." />
                             <h4>Gopa Jaya Prakash</h4>
                             <p class="text-muted">Proprietor and Business lead </p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://wa.me/9440290461"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://wa.me/+919440290461"><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
@@ -219,9 +226,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">-: All about our team :-.</p></div>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- Clients-->
@@ -244,58 +251,71 @@
             </div>
         </div> -->
         <!-- Contact-->
-        <section class="page-section" id="contact">
+        <section class="page-section column1" id="contact">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase">Contact Us</h2>
+                            <h3 class="section-subheading" style="color: white;">Feel free to lay a message to us and our team will get in touch with you!.</h3>
+                        </div>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+
+                        <form id="contactForm">
+                            <div class="row align-items-stretch mb-5">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <!-- Name input-->
+                                        <input class="form-control" name="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                    </div>
+                                    <div class="form-group mb-md-0">
+                                        <!-- Phone number input-->
+                                        <input class="form-control" name="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-textarea mb-md-0">
+                                        <!-- Message input-->
+                                        <textarea class="form-control" name="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center text-white mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                        </form>        
+                    </div>>
+                    <div class="col-md">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase">Reach Us</h2>
+                        </div>
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2854184271227!2d79.7743800148522!3d15.576392089187065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4ae1842ea02907%3A0x67b91f4d148d482f!2sVasanth%20Granites!5e0!3m2!1sen!2sin!4v1625667299505!5m2!1sen!2sin" style="border:0; align-content: center;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" form action="https://submit-form.com/TflNkWly">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" name="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" name="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" name="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
-                </form>
             </div>
         </section>
         <!-- Footer-->
@@ -308,10 +328,9 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div> -->
-                    <div class="col-lg-3 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="https://goo.gl/maps/K949ZdcZ1dz5AxyD8">Our Office location</a>
-                        <a class="link-dark text-decoration-none"> ◉ 24 hours Open</a>
-                    </div>
+                    <!-- <div class="col-lg-3 text-lg-end">
+                        <a class="link-dark text-decoration-none"> Our  24 hours Open</a>
+                    </div> -->
                 </div>
             </div>
         </footer>
@@ -534,6 +553,5 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
