@@ -11269,8 +11269,7 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background: linear-gradient(rgba(29, 28, 28, 0.9), rgba(29, 28, 28, 0.9)),
-  url("../assets/img/vg2.jpeg");
+  background-image: url("../assets/img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
 }

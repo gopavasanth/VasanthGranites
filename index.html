@@ -15,12 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
         <script src="./main.js"></script>
     </head>
     <body id="page-top">
@@ -198,7 +193,7 @@
                     <h3 class="section-subheading text-muted">Feel free to connect with us in WhatsApp</h3>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/gopaprakash.jpg" alt="..." />
                             <h4>Gopa Jaya Prakash</h4>
@@ -207,20 +202,11 @@
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
                             <h4>Ranga Swamy</h4>
                             <p class="text-muted">Business lead</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://wa.me/"><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Mahesh</h4>
-                            <p class="text-muted">Business support </p>
                             <a class="btn btn-dark btn-social mx-2" href="https://wa.me/"><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         </div>
@@ -266,25 +252,24 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-
                         <form id="contactForm">
                             <div class="row align-items-stretch mb-5">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <!-- Name input-->
-                                        <input class="form-control" name="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                        <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
                                     <div class="form-group mb-md-0">
                                         <!-- Phone number input-->
-                                        <input class="form-control" name="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-textarea mb-md-0">
                                         <!-- Message input-->
-                                        <textarea class="form-control" name="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                     </div>
                                 </div>
@@ -304,8 +289,11 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit">Send Message</button></div>
                         </form>        
+                          <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+                          <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+                          <script src="app.js"></script>
                     </div>>
                     <div class="col-md">
                         <div class="text-center">
