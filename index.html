@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Vasanth Granites</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/vg.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -19,6 +19,17 @@
 
     <script src="./main.js"></script>
 </head>
+
+<script>
+    function checkform() {
+        if (document.contactForm.name.value == "") {
+            alert("Please enter your name");
+            return false;
+        } else {
+            document.contactForm.submit();
+        }
+    }
+</script>
 
 <body id="page-top">
     <!-- Navigation-->
@@ -308,9 +319,11 @@
                         </div>
                         <!-- Submit Button-->
                         <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submit"
-                                type="submit">Send Message</button></div>
+                                type="submit" onclick="return checkform()">Send Message</button></div>
                     </form>
-                    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+
+                    <script src=" https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
                     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
                     <script src="app.js"></script>
                 </div>>
