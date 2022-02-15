@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Vasanth Granites</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/vg.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -278,14 +279,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <!-- Name input-->
-                                    <input class="form-control" id="name" name="name" type="text"
+                                    <input class="form-control" id="name" name="name" v-model="name" type="text"
                                         placeholder="Your Name *" data-sb-validations="required" />
                                     <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.
                                     </div>
                                 </div>
                                 <div class="form-group mb-md-0">
                                     <!-- Phone number input-->
-                                    <input class="form-control" id="phone" name="phone" type="tel"
+                                    <input class="form-control" id="phone" name="phone" v-model="phone" type="tel"
                                         placeholder="Your Phone *" data-sb-validations="required" />
                                     <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
                                         required.</div>
@@ -294,7 +295,7 @@
                             <div class="col-md-6">
                                 <div class="form-group form-group-textarea mb-md-0">
                                     <!-- Message input-->
-                                    <textarea class="form-control" id="message" name="message"
+                                    <textarea class="form-control" id="message" name="message" v-model="message"
                                         placeholder="Your Message *" data-sb-validations="required"></textarea>
                                     <div class="invalid-feedback" data-sb-feedback="message:required">A message is
                                         required.</div>
@@ -318,10 +319,20 @@
                             <div class="text-center text-danger mb-3">Error sending message!</div>
                         </div>
                         <!-- Submit Button-->
-                        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submit"
-                                type="submit" onclick="return checkform()">Send Message</button></div>
-                    </form>
+                            <!-- <div class="text-center">
+                                <button class="btn btn-primary btn-xl text-uppercase" id="submit"
+                                    type="submit" onclick="return checkform()">                           
+                                    Send Message
+                                </button>
+                            </div> -->
 
+                            <div class="buttons text-center" id="buttons">
+                                <a :href="'http://wa.me/+919440290461?text=' + name + '%0A' + phone + '%0A' + message">
+                                    <button type="button" id="button" class="btn btn-primary btn-xl text-uppercase"><i class="bi bi-whatsapp"></i>
+                                        Message</button>
+                                </a>
+                            </div>
+                    </form>
 
                     <script src=" https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
                     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
@@ -359,5 +370,35 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 </body>
+
+<script>
+    const app = Vue.createApp({
+        el: '#app',
+        data() {
+            return {
+                name: '',
+                phone: '',
+                message: ''
+            };
+        }
+    })
+    app.mount('#contactForm')
+    // if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js') }
+    // let input = document.querySelector(".form-control");
+    // let button = document.querySelector(".btn");
+
+    // button.disabled = true; //setting button state to disabled
+
+    // input.addEventListener("change", stateHandle);
+
+    // function stateHandle() {
+    //     if (document.querySelector(".form-control").value === "") {
+    //         button.disabled = true; //button remains disabled
+    //     } else {
+    //         button.disabled = false; //button is enabled
+    //     }
+    // }
+    AOS.init();
+</script>
 
 </html>
